@@ -148,31 +148,17 @@ namespace CollectionsMasterConsoleUI
 
         private static void OddKiller(List<int> numberList)
         {
-            List<int> evenNumbers = new List<int>();
-
-            foreach (int num in numberList)
-            {
-                if(num % 2 == 0)
+             for (int i = numberList.Count - 1; i >= 0; i--)
+              {
+                if (numberList[i] % 2 != 0)
                 {
-                    evenNumbers.Add(num);
+                  numberList.RemoveAt(i);
                 }
-           
-            }
-            Console.WriteLine("Even Numbers:");
-            NumberPrinter(evenNumbers); 
-            Console.WriteLine("tada");
-
-            // for (int i = numberList.Count - 1; i >= 0; i--)
-            //  {
-            //    if (list[i] % 2 != 0)
-            //    {
-            //      numberList.RemoveAt(i);
-            //    }
-            //  }
-            //Console.WriteLine("Even numbers:");
-            //foreach (int num in numberList)
-            //{Console.WriteLine(num);}
-            //
+              }
+            Console.WriteLine("Even numbers:");
+            foreach (int num in numberList)
+            {Console.WriteLine(num);}
+            
         }
 
         private static void NumberChecker(List<int> numberList)
